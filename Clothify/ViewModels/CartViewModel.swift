@@ -10,8 +10,10 @@ import Foundation
 class CartViewModel: ObservableObject {
     @Published var cartItems = [Product]()
     
-    func addItem(item: Product) {
-        if !cartItems.contains(item) {
+    func actionButtonClicked(item: Product) {
+        if let index = cartItems.firstIndex(of: item) {
+            cartItems.remove(at: index)
+        } else {
             cartItems.append(item)
         }
     }

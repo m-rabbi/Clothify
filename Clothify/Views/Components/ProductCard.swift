@@ -55,9 +55,9 @@ struct ProductCard: View {
             
             // Add to Cart
             Button {
-                cartViewModel.addItem(item: product)
+                cartViewModel.actionButtonClicked(item: product)
             } label: {
-                Image(systemName: "plus")
+                Image(systemName: cartViewModel.cartItems.contains(product) ? "minus" : "plus")
                     .padding()
                     .foregroundStyle(.white)
                     .background(.black)
@@ -75,4 +75,5 @@ struct ProductCard: View {
 
 #Preview {
     ProductCard(product: DeveloperPreview.products[0])
+        .environmentObject(CartViewModel())
 }

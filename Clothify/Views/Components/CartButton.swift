@@ -36,5 +36,6 @@ struct CartButton: View {
 
 #Preview {
     CartButton()
+        .environmentObject(CartViewModel())
 }
 
