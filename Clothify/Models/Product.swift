@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product: Identifiable {
+struct Product: Identifiable, Equatable {
     let id = UUID().uuidString
     let name: String
     let imageUrl: String

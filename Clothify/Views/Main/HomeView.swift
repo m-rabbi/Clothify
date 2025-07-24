@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var cartViewModel = CartViewModel()
     
     let columns = [
         GridItem(.adaptive(minimum: 180), spacing: 5)
@@ -19,6 +20,7 @@ struct HomeView: View {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(DeveloperPreview.products) { product in
                         ProductCard(product: product)
+                            .environmentObject(cartViewModel)
                     }
                 }
                 .padding(.top)
@@ -26,7 +28,8 @@ struct HomeView: View {
             .navigationTitle("Clothify")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    CartButton(numberOfProducts: 2)
+                    CartButton()
+                        .environmentObject(cartViewModel)
                 }
             }
         }

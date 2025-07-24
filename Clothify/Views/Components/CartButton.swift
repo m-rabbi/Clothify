@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CartButton: View {
-    var numberOfProducts: Int
-    
+    @EnvironmentObject var cartViewModel: CartViewModel
+        
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Button {
@@ -21,8 +21,8 @@ struct CartButton: View {
                     .foregroundStyle(.black)
             }
             
-            if numberOfProducts > 0 {
-                Text("\(numberOfProducts)")
+            if cartViewModel.cartItems.count > 0 {
+                Text("\(cartViewModel.cartItems.count)")
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(width: 20, height: 20)
@@ -35,6 +35,6 @@ struct CartButton: View {
 }
 
 #Preview {
-    CartButton(numberOfProducts: 4)
+    CartButton()
 }
 
