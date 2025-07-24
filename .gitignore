@@ -1,0 +1,36 @@
+# Xcode
+## User settings
+xcuserdata/
+
+## Compatibility with Xcode 8 and earlier (ignoring deprecated files)
+*.xcscmblueprint
+*.xccheckout
+
+## Build generated
+build/
+DerivedData/
+*.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+
+## Other
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+## Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## macOS
+.DS_Store
+
+## Miscellaneous
+*.swp
+*~
