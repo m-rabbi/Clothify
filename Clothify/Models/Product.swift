@@ -11,4 +11,5 @@ struct Product: Identifiable {
     let id = UUID().uuidString
     let name: String
     let imageUrl: String
+    let price: Int
 }

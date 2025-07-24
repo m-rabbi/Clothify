@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    let columns = [
+        GridItem(.adaptive(minimum: 180), spacing: 10)
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView{
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(DeveloperPreview.products) { product in
+                        ProductCard(product: product)
+                    }
+                }
+            }
+            
+        }
     }
 }
 

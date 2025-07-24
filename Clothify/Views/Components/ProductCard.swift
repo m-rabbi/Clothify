@@ -15,22 +15,33 @@ struct ProductCard: View {
             Image(product.imageUrl)
                 .resizable()
                 .scaledToFill()
-                .shadow(color: .black.opacity(0.5), radius: 2)
-                .frame(width: 180, height: 200)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-
-
+                .frame(width: 180, height: 250)
             
+            
+            VStack(alignment: .leading, spacing: 0) {
                 Text(product.name)
+                    .fontWeight(.bold)
+
+                
+                Text("$\(product.price)")
                     .font(.footnote)
-                    .fontWeight(.semibold)
-                    .padding(.horizontal, 5)
-                    .foregroundStyle(.secondary)
-                    .frame(height: 40)
-                    .frame(maxWidth: 180, alignment: .leading)
-                    .background(.thinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
+
+            }
+            .foregroundStyle(.primary)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 12)
+            .frame(width: 180, alignment: .leading)
+            .background(.ultraThinMaterial)
+            .clipShape(.rect(cornerRadius: 20))
+            .lineLimit(1)
+    
+                
+            
         }
+        .frame(width: 180, height: 250)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: .black.opacity(0.5), radius: 2)
+
         
     }
 }
