@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ProductCard: View {
+    let product: Product
+    
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image("cloth-1")
+            Image(product.imageUrl)
                 .resizable()
                 .scaledToFill()
                 .shadow(color: .black.opacity(0.5), radius: 2)
@@ -19,23 +21,20 @@ struct ProductCard: View {
 
 
             
-            VStack {
-                Text("Winter Jacket")
+                Text(product.name)
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .padding(.horizontal, 5)
                     .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .frame(height: 40)
+                    .frame(maxWidth: 180, alignment: .leading)
                     .background(.thinMaterial)
-                    .frame(maxWidth: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
-            }
         }
         
     }
 }
 
 #Preview {
-    ProductCard()
+    ProductCard(product: DeveloperPreview.products[0])
 }
