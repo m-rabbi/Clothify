@@ -17,6 +17,13 @@ struct ProductCard: View {
                 .scaledToFill()
                 .frame(width: 180, height: 250)
             
+            LinearGradient(
+                colors: [.clear, .black.opacity(0.4)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(product.name)
@@ -25,7 +32,7 @@ struct ProductCard: View {
                 
                 Text("$\(product.price)")
                     .font(.footnote)
-
+                    .fontWeight(.semibold)
             }
             .foregroundStyle(.primary)
             .padding(.horizontal, 10)

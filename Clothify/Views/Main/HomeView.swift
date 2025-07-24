@@ -21,8 +21,9 @@ struct HomeView: View {
                         ProductCard(product: product)
                     }
                 }
+                .padding(.top)
             }
-            
+            .navigationTitle("Clothify")
         }
     }
 }
