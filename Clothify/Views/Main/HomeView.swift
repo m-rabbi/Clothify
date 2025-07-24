@@ -24,6 +24,11 @@ struct HomeView: View {
                 .padding(.top)
             }
             .navigationTitle("Clothify")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    CartButton(numberOfProducts: 2)
+                }
+            }
         }
     }
 }

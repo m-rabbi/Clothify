@@ -62,6 +62,7 @@ struct ProductCard: View {
                     .background(.black)
                     .clipShape(Circle()) 
                     .padding(8)
+                    .shadow(radius: 5)
             }
 
             
