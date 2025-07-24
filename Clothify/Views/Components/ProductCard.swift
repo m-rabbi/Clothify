@@ -55,14 +55,17 @@ struct ProductCard: View {
             
             // Add to Cart
             Button {
-                cartViewModel.actionButtonClicked(item: product)
+                withAnimation(.easeInOut(duration: 0.2)){
+                    cartViewModel.actionButtonClicked(item: product)
+                }
             } label: {
                 Image(systemName: cartViewModel.cartItems.contains(product) ? "minus" : "plus")
-                    .padding()
+                    .padding(8)
                     .foregroundStyle(.white)
+                    .frame(width: 60, height: 50)
                     .background(.black)
                     .clipShape(Circle()) 
-                    .padding(8)
+                    .padding(6)
                     .shadow(radius: 5)
             }
 
