@@ -10,13 +10,13 @@ import SwiftUI
 struct HomeView: View {
     
     let columns = [
-        GridItem(.adaptive(minimum: 180), spacing: 10)
+        GridItem(.adaptive(minimum: 180), spacing: 5)
     ]
     
     var body: some View {
         NavigationStack {
             ScrollView{
-                LazyVGrid(columns: columns, spacing: 20) {
+                LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(DeveloperPreview.products) { product in
                         ProductCard(product: product)
                     }
