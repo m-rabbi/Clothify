@@ -41,7 +41,7 @@ Clothify is a simple SwiftUI shopping app that displays a grid of products and i
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Clothify.git
+   git clone https://github.com/m-rabbi/Clothify.git
    ```
 2. Open `Clothify.xcodeproj` in Xcode 15+
 3. Run on the iOS Simulator or a physical device
