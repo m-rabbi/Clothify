@@ -12,10 +12,26 @@ struct CartView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(cartViewModel.cartItems) { cartItem in
-                ProductRow(product: cartItem)
-                    .environmentObject(cartViewModel)
-                    .transition(.move(edge: .trailing))
+            VStack {
+                if cartViewModel.cartItems.isEmpty {
+                    Text("Your cart is empty. Add items to checkout.")
+                        .fontWeight(.semibold)
+                } else {
+                    ForEach(cartViewModel.cartItems) { cartItem in
+                        ProductRow(product: cartItem)
+                            .environmentObject(cartViewModel)
+                            .transition(.move(edge: .trailing))
+                        
+                    }
+                    HStack {
+                        Text("Your cart total is")
+                        
+                        Spacer()
+                        
+                        Text("\(cartViewModel.cartTotal).00")
+                    }
+                    .padding()
+                }
             }
             .animation(.spring(response: 0.5, dampingFraction: 0.8), value: cartViewModel.cartItems)
         }
@@ -25,6 +41,8 @@ struct CartView: View {
 }
 
 #Preview {
-    CartView()
-        .environmentObject(CartViewModel())
+    NavigationStack {
+        CartView()
+            .environmentObject(CartViewModel())
+    }
 }

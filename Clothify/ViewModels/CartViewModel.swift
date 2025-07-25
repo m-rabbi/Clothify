@@ -11,7 +11,12 @@ import SwiftUI
 class CartViewModel: ObservableObject {
     @Published var cartItems = [Product]()
     @Published var cartScale: CGFloat = 1.0            // cart icon animation
+    
     let animationDuration = 0.3
+    var cartTotal: Int {
+        cartItems.reduce(0) { $0 + $1.price}
+    }
+    
     
     func actionButtonClicked(item: Product) {
         if let index = cartItems.firstIndex(of: item) {
