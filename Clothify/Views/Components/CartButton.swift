@@ -20,6 +20,8 @@ struct CartButton: View {
                     .frame(width: 40, height: 40)
                     .foregroundStyle(.black)
                     .scaleEffect(cartViewModel.cartScale)
+                    .animation(.spring(response: 0.3, dampingFraction: 0.4, blendDuration: 0.2), value: cartViewModel.cartScale)
+
 
 
             }
