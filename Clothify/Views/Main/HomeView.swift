@@ -20,7 +20,7 @@ struct HomeView: View {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(DeveloperPreview.products) { product in
                         ProductCard(product: product)
-                            .environmentObject(cartViewModel)
+                            .environmentObject(cartViewModel) 
                     }
                 }
                 .padding(.top)

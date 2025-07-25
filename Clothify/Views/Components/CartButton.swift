@@ -19,8 +19,7 @@ struct CartButton: View {
                     .resizable()
                     .frame(width: 40, height: 40)
                     .foregroundStyle(.black)
-                    .scaleEffect(cartViewModel.cartFlash ? 1.3 : 1.0)
-                    .animation(.easeInOut(duration: 0.2), value: cartViewModel.cartFlash)
+                    .scaleEffect(cartViewModel.cartScale)
 
 
             }
