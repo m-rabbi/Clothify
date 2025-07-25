@@ -12,9 +12,7 @@ struct CartButton: View {
         
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            Button {
-                
-            } label: {
+
                 Image(systemName: "cart")
                     .resizable()
                     .frame(width: 40, height: 40)
@@ -24,7 +22,6 @@ struct CartButton: View {
 
 
 
-            }
             
             if cartViewModel.cartItems.count > 0 {
                 Text("\(cartViewModel.cartItems.count)")

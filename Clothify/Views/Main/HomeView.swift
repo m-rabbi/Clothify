@@ -28,11 +28,18 @@ struct HomeView: View {
             .navigationTitle("Clothify")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    CartButton()
-                        .environmentObject(cartViewModel)
+                    NavigationLink {
+                        CartView()
+                            .environmentObject(cartViewModel)
+                    } label: {
+                        CartButton()
+                            .environmentObject(cartViewModel)
+                    }
+
                 }
             }
         }
+        .tint(.primary)
     }
 }
 
