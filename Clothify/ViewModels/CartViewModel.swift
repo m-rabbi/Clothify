@@ -28,7 +28,7 @@ class CartViewModel: ObservableObject {
             }
         } else {
             cartItems.append(item)
-            cartScale = 1.3
+            cartScale = 1.2
             
             DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
                 self.cartScale = 1
